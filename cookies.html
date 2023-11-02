@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang='cs' data-bs-theme="dark">
+
+<head>
+    <title>zpěvník</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <meta charset='utf-8'>
+</head>
+<!-- CSS a JavaScript -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="./main.css">
+
+<body>
+
+    <!-- Support pro mobilní menu -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <div class="container">
+
+        <a href="./index.html"><button class="btn btn-primary" type="button">Zpět</button></a>
+
+        <h1 class="nadpis">Jak používáme cookies</h1>
+
+        <p>
+            <b>cookie_accepted:</b> Pamatuje si, či jste odklikli tlačítko cookies, aby vás to neupozorňovalo znovu, a
+            to po dobu jednoho roku.
+        </p>
+
+        <button id="clear-cookie" style="margin-left: 10px;">Smazat cookies na této stránce</button>
+
+        <div id="cookie-notification"
+            style="display: none; background-color: black; position: fixed; bottom: 0; left: 0; width: 100%; text-align: center; padding: 10px;">
+            Tato webová stránka používá soubory cookie. Používání této stránky s tímto souhlasíte. <a
+                href="cookies.html">Jak cookies používáme</a>
+            <button id="accept-cookie" style="margin-left: 10px;">Nezobrazovat znovu</button>
+        </div>
+    </div>
+
+    <script>
+        // Funkce pro nastavení cookies
+        function setCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + value + expires + "; path=/";
+        }
+
+        // Funkce pro získání hodnoty cookie
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i];
+                while (cookie.charAt(0) == ' ') {
+                    cookie = cookie.substring(1, cookie.length);
+                }
+                if (cookie.indexOf(nameEQ) == 0) {
+                    return cookie.substring(nameEQ.length, cookie.length);
+                }
+            }
+            return null;
+        }
+
+        // Funkce pro smazání cookies
+        function deleteCookie(name) {
+            document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        }
+
+        // Zkontrolujeme, zda uživatel již odklikl cookies
+        var cookieNotification = document.getElementById('cookie-notification');
+        var acceptButton = document.getElementById('accept-cookie');
+        var clearButton = document.getElementById('clear-cookie');
+
+        if (!getCookie('cookie_accepted')) {
+            cookieNotification.style.display = 'block';
+        }
+
+        // Po kliknutí na tlačítko Souhlasím
+        acceptButton.addEventListener('click', function() {
+            setCookie('cookie_accepted', 'true', 365); // Uložíme cookie na 1 rok
+            cookieNotification.style.display = 'none';
+        });
+
+        // Po kliknutí na tlačítko Smazat cookies
+        clearButton.addEventListener('click', function() {
+            deleteCookie('cookie_accepted');
+            location.reload(); // Obnovíme stránku
+        });
+    </script>
+
+</body>
+
+</html>
