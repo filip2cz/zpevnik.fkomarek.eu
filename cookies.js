@@ -26,8 +26,10 @@ function getCookie(name) {
 }
 
 // Funkce pro smazání cookies
-function deleteCookie(name) {
-    document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+function deleteCookies(names) {
+    for (var i = 0; i < names.length; i++) {
+        document.cookie = names[i] + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    }
 }
 
 // Zkontrolujeme, zda uživatel již odklikl cookies
@@ -47,6 +49,6 @@ acceptButton.addEventListener('click', function () {
 
 // Po kliknutí na tlačítko Smazat cookies
 clearButton.addEventListener('click', function () {
-    deleteCookie('cookie_accepted');
+    deleteCookies(['cookie_accepted', 'darkMode']); // Smazání obou cookies
     location.reload(); // Obnovíme stránku
 });

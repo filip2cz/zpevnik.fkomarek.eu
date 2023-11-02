@@ -13,6 +13,7 @@
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
     crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" href="./main.css">
+<link rel="stylesheet" type="text/css" href="amoled.css" id="dark-mode-stylesheet">
 
 <body>
 
@@ -21,13 +22,14 @@
 
     <div class="container">
 
-        <a href="./index.html"><button class="btn btn-primary" type="button">Zpět</button></a>
+        <button class="btn btn-primary" type="button">Zpět</button>
 
         <h1 class="nadpis">Jak používáme cookies</h1>
 
         <p>
-            <b>cookie_accepted:</b> Pamatuje si, či jste odklikli tlačítko cookies, aby vás to neupozorňovalo znovu, a
-            to po dobu jednoho roku.
+            <b>cookie_accepted</b>: Pamatuje si, či jste odklikli tlačítko cookies, aby vás to neupozorňovalo znovu, a
+            to po dobu jednoho roku.<br>
+            <b>darkMode</b>: Pamatuje si, jestli jste zapli Amoled mode (černé pozadí stránky)
         </p>
 
         <button id="clear-cookie" style="margin-left: 10px;">Smazat cookies na této stránce</button>
@@ -42,8 +44,14 @@
             </div>
         </div>
 
+        <div>
+            <br><br>
+            <button class="btn btn-primary" type="button" id="dark-mode-button">Amoled</button>
+        </div>
+
     </div>
 
+    <script src="amoled.js"></script>
     <script src="cookies.js"></script>
 
 </body>
