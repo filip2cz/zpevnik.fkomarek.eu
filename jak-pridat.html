@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang='cs' data-bs-theme="dark">
+
+<head>
+    <title>zpěvník</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <meta charset='utf-8'>
+</head>
+
+<body>
+    <!-- CSS a JavaScript -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="./main.css">
+    <link rel="stylesheet" type="text/css" href="amoled.css" id="dark-mode-stylesheet">
+
+    <!-- Support pro mobilní menu -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <div class="container">
+
+        <a href="./"><button class="btn btn-primary" type="button">Zpět</button></a>
+
+        <h1 class="nadpis">Jak přidat písničku</h1>
+
+        <h2>Mám Github účet, umím dělat pull requesty a umím html</h2>
+
+        <ol>
+            <li>Udělejte si fork repozitáře <a href="https://github.com/filip2cz/zpevnik.fkomarek.eu"
+                    target="_blank">https://github.com/filip2cz/zpevnik.fkomarek.eu</a>.</li>
+            <li>Zkopírujte složku template.</li>
+            <li>Do text.txt v té nové složce dejte text písně.</li>
+            <li>V index.html v té nové složce doplňte název písně, autora, odkaz na akordy a zdroj textu.</li>
+            <li>Do index.html ve hlavní složce dejte odkaz na složku s písní, dodržte abecední pořadí.</li>
+        </ol>
+
+        <h2>Mám Github účet, ale neumím dělat pull requesty nebo html</h2>
+
+
+        <p>Vytvořte issue pro přidání písně na odkaze <a
+                href="https://github.com/filip2cz/zpevnik.fkomarek.eu/issues/new?assignees=&labels=p%C5%99id%C3%A1n%C3%AD+p%C3%ADsn%C4%9B&projects=&template=p%C5%99id%C3%A1n%C3%AD-p%C3%ADsn%C4%9B.md&title=P%C5%99id%C3%A1n%C3%AD+p%C3%ADsn%C4%9B%3A"
+                target="_blank">https://github.com/filip2cz/zpevnik.fkomarek.eu/issues/new?assignees=&labels=p%C5%99id%C3%A1n%C3%AD+p%C3%ADsn%C4%9B&projects=&template=p%C5%99id%C3%A1n%C3%AD-p%C3%ADsn%C4%9B.md&title=P%C5%99id%C3%A1n%C3%AD+p%C3%ADsn%C4%9B%3A</a>
+        </p>
+
+
+        <h2>Nemám Github účet</h2>
+
+        <p>Vyplňte následující formulář: <a
+                href="https://forms.gle/tqejtqF6Xjh943NT6">https://forms.gle/tqejtqF6Xjh943NT6</a></p>
+
+
+        <div>
+            <br><br>
+            <button class="btn btn-primary" type="button" id="dark-mode-button">Amoled</button>
+        </div>
+
+        <div id="cookies-footer">
+            <div id="cookie-notification"
+                style="display: none; background-color: black; position: fixed; bottom: 0; left: 0; width: 100%; text-align: center; padding: 10px;">
+                Tato webová stránka používá soubory cookie. Používáním této stránky s tímto souhlasíte. <a
+                    href="cookies.html">Jak
+                    cookies používáme</a>
+                <button class="btn btn-dark" type="button" id="accept-cookie" style="margin-left: 10px;">Nezobrazovat
+                    znovu</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="amoled.js"></script>
+    <script src="cookies.js"></script>
+
+</body>
+
+</html>
