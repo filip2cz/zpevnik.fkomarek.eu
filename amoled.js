@@ -4,7 +4,7 @@ function setDarkMode() {
     body.classList.add('dark-mode');
 
     // Uložení informace o režimu do cookies
-    document.cookie = "darkMode=enabled; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+    document.cookie = "darkMode=enabled; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/;";
 }
 
 // Funkce pro vypnutí režimu (světlý režim)
@@ -13,7 +13,7 @@ function unsetDarkMode() {
     body.classList.remove('dark-mode');
 
     // Smazání informace o režimu z cookies
-    document.cookie = "darkMode=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    document.cookie = "darkMode=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;";
 }
 
 // Zjistit stav dark mode z cookies a případně jej aktivovat
