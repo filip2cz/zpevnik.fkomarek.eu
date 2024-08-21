@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang='cs' data-bs-theme="dark">
+
+<head>
+    <title>zpěvník</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <meta charset='utf-8'>
+</head>
+
+<body>
+    <!-- CSS a JavaScript -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    <link rel="stylesheet" type="text/css" href="../amoled.css" id="dark-mode-stylesheet">
+
+    <!-- Support pro mobilní menu -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <div class="container">
+
+        <a href="../"><button class="btn btn-primary" type="button">Zpět</button></a>
+
+        <h1 class="center nadpis">Ráda se miluje</h1>
+
+        <p class="center">Autor: Karel Plíhal</p>
+
+        <p class="center">Akordy: <a href="https://pisnicky-akordy.cz/karel-plihal/rada-se-miluje" target="_blank">https://pisnicky-akordy.cz/karel-plihal/rada-se-miluje</a></p>
+
+        <script>
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'text.txt', true);
+            xhr.onreadystatechange = function () {
+                if (this.readyState !== 4) return;
+                if (this.status !== 200) return; // or whatever error handling you want
+                document.getElementById('text').innerHTML = this.responseText;
+            };
+            xhr.send();
+        </script>
+
+        <pre class="vs-code" id="text">
+            Nepodařilo se načíst text. Máte povolený JavaScript?
+        </pre>
+
+        <p class="center">
+            <a href="https://redirect.invidious.io/watch?v=jdFyRXMEeaQ" target="_blank">Invidious</a> |
+            <a href="https://www.youtube.com/watch?v=jdFyRXMEeaQ" target="_blank">Youtube</a> |
+            <a href="https://soundcloud.com/ondrejpaska-1/karel-plihal-rada-se-miluje-ondrej-paska-cover" target="_blank">SoundCloud (Ondřej Paska cover)</a> |
+            <a href="https://open.spotify.com/track/0qO6ZAdEUCDKXurF5SwLsa" target="_blank">Spotify</a>
+        </p>
+
+        <p class="center">Zdroj: <a href="https://www.karaoketexty.cz/texty-pisni/plihal-karel/rada-se-miluje-37954" target="_blank">https://www.karaoketexty.cz/texty-pisni/plihal-karel/rada-se-miluje-37954</a></p>
+
+        <div>
+            <br><br>
+            <button class="btn btn-primary" type="button" id="dark-mode-button">Amoled</button>
+        </div>
+
+        <div id="cookies-footer">
+            <div id="cookie-notification"
+                style="display: none; background-color: black; position: fixed; bottom: 0; left: 0; width: 100%; text-align: center; padding: 10px;">
+                Tato webová stránka používá soubory cookie. Používáním této stránky s tímto souhlasíte. <a
+                    href="../cookies.html">Jak
+                    cookies používáme</a>
+                <button class="btn btn-dark" type="button" id="accept-cookie" style="margin-left: 10px;">Nezobrazovat znovu</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../amoled.js"></script>
+    <script src="../cookies.js"></script>
+
+</body>
+
+</html>
