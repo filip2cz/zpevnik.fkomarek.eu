@@ -18,7 +18,10 @@
 
         <p class="center">Web je stále ve výstavbě, nicméně zde už je pár písniček:</p>
 
-        <p class="center">Novinka: přechod z Javascriptu na PHP (rychlejší a spolehlivější web pro Vás), černé pozadí jako výchozí, opuštění cookies</p>
+        <p class="center">
+            Novinka: přechod z Javascriptu na PHP (rychlejší a spolehlivější web pro Vás), černé pozadí
+            jako výchozí, opuštění cookies
+        </p>
 
         <!-- https://cs.wikipedia.org/wiki/Abeceda#%C4%8Cesk%C3%A1_abeceda -->
 
@@ -28,9 +31,9 @@
 
         <p class="center"><a href="batalion/">Batalion</a></p>
 
-        <p class="center"><a href="drak/">Drak</a></p>
+        <p class="center"><a href="dlazebni-kostka/">Dlažební kostka </a></p>
 
-        <p class="center"><a href="dlazebni-kostka/"> Dlažební kostka </a></p>
+        <p class="center"><a href="drak/">Drak</a></p>
 
         <p class="center"><a href="jdou-po-mne-jdou/">Jdou po mně jdou</a></p>
 
