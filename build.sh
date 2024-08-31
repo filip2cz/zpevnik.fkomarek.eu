@@ -7,6 +7,12 @@ process_php_to_html() {
     php_base=$(basename "$php_file")  # Získá název souboru (např. index.php)
     html_file="${php_base%.php}.html"
 
+    # Pokud je soubor ve složce include, přeskočí zpracování
+    if [[ "$php_dir" == *"/include" ]]; then
+        echo "Ignorováno: $php_file"
+        return
+    fi
+
     # Uložení původní cesty
     original_dir=$(pwd)
 
