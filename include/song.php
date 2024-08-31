@@ -11,6 +11,7 @@ $autor = isset($song['autor']) ? $song['autor'] : 'neznámé';
 $akordy = isset($song['akordy']) ? $song['akordy'] : '';
 $zdroj = isset($song['zdroj']) ? $song['zdroj'] : '';
 $zdrojText = isset($song['zdrojText']) ? $song['zdrojText'] : $zdroj;
+$zdrojPopis = isset($song['zdrojPopis']) ? $song['zdrojPopis'] : '';
 $invidious = isset($song['invidious']) ? $song['invidious'] : '';
 $youtube = isset($song['youtube']) ? $song['youtube'] : '';
 $soundcloud = isset($song['soundcloud']) ? $song['soundcloud'] : '';
@@ -73,10 +74,12 @@ $escaped_text = htmlspecialchars($text);
             <?php endif; ?>
         </p>
 
-
         <p class="center">Zdroj: <a href="<?php echo htmlspecialchars($zdroj); ?>"
                 target="_blank"><?php echo htmlspecialchars($zdrojText); ?></a></p>
 
+        <?php if (!empty($zdrojPopis)): ?>
+            <p class="center"><?php echo htmlspecialchars($zdrojPopis); ?></p>
+        <?php endif; ?>
     </div>
 
 </body>
