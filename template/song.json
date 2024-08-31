@@ -6,11 +6,7 @@
     "zdrojText": "text odkazu (může být smazáno)",
     "zdrojPopis": "Popis zdroje (optional)",
     "invidious": "odkaz",
-    "invidiousText": "Invidious",
     "youtube": "odkaz",
-    "youtubeText": "YouTube",
     "soundcloud": "odkaz",
-    "soundcloudText": "SoundCloud",
-    "spotify": "odkaz",
-    "spotifyText": "Spotify"
+    "spotify": "odkaz"
 }
