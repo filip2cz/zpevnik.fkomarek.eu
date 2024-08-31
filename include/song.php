@@ -13,9 +13,13 @@ $zdroj = isset($song['zdroj']) ? $song['zdroj'] : '';
 $zdrojText = isset($song['zdrojText']) ? $song['zdrojText'] : $zdroj;
 $zdrojPopis = isset($song['zdrojPopis']) ? $song['zdrojPopis'] : '';
 $invidious = isset($song['invidious']) ? $song['invidious'] : '';
+$invidiousText = isset($song['invidiousText']) ? $song['invidiousText'] : 'Invidious';
 $youtube = isset($song['youtube']) ? $song['youtube'] : '';
+$youtubeText = isset($song['youtubeText']) ? $song['youtubeText'] : 'YouTube';
 $soundcloud = isset($song['soundcloud']) ? $song['soundcloud'] : '';
+$soundcloudText = isset($song['soundcloudText']) ? $song['soundcloudText'] : 'SoundCloud';
 $spotify = isset($song['spotify']) ? $song['spotify'] : '';
+$spotifyText = isset($song['spotifyText']) ? $song['spotifyText'] : 'Spotify';
 
 // Načtení obsahu souboru text.txt
 $text = file_get_contents('text.txt');
@@ -55,22 +59,22 @@ $escaped_text = htmlspecialchars($text);
 
         <p class="center">
             <?php if (!empty($invidious)): ?>
-                <a href="<?php echo htmlspecialchars($invidious); ?>" target="_blank">Invidious</a>
+                <a href="<?php echo htmlspecialchars($invidious); ?>" target="_blank"><?php echo htmlspecialchars($invidiousText); ?></a>
             <?php endif; ?>
 
             <?php if (!empty($youtube)): ?>
                 <?php if (!empty($invidious)): ?> | <?php endif; ?>
-                <a href="<?php echo htmlspecialchars($youtube); ?>" target="_blank">YouTube</a>
+                <a href="<?php echo htmlspecialchars($youtube); ?>" target="_blank"><?php echo htmlspecialchars($youtubeText); ?></a>
             <?php endif; ?>
 
             <?php if (!empty($soundcloud)): ?>
                 <?php if (!empty($invidious) || !empty($youtube)): ?> | <?php endif; ?>
-                <a href="<?php echo htmlspecialchars($soundcloud); ?>" target="_blank">SoundCloud</a>
+                <a href="<?php echo htmlspecialchars($soundcloud); ?>" target="_blank"><?php echo htmlspecialchars($soundcloudText); ?></a>
             <?php endif; ?>
 
             <?php if (!empty($spotify)): ?>
                 <?php if (!empty($invidious) || !empty($youtube) || !empty($soundcloud)): ?> | <?php endif; ?>
-                <a href="<?php echo htmlspecialchars($spotify); ?>" target="_blank">Spotify</a>
+                <a href="<?php echo htmlspecialchars($spotify); ?>" target="_blank"><?php echo htmlspecialchars($spotifyText); ?></a>
             <?php endif; ?>
         </p>
 
