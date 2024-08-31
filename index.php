@@ -1,13 +1,21 @@
 <?php
 // Funkce pro čtení názvu písničky z JSON souboru
-function getSongTitle($jsonFilePath)
-{
+function getSongTitle($jsonFilePath) {
     if (!file_exists($jsonFilePath)) {
         return null;
     }
     $jsonContent = file_get_contents($jsonFilePath);
     $data = json_decode($jsonContent, true);
     return $data['nazev'] ?? null;
+}
+
+// Funkce pro čtení alternativních názvů z textového souboru
+function getAlternativeTitles($txtFilePath) {
+    if (!file_exists($txtFilePath)) {
+        return [];
+    }
+    $titles = file($txtFilePath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    return array_map('trim', $titles);
 }
 
 // Cesta k hlavní složce s písničkami
@@ -21,8 +29,23 @@ foreach (scandir($baseDir) as $folder) {
     $folderPath = $baseDir . '/' . $folder;
     if (is_dir($folderPath) && $folder !== '.' && $folder !== '..') {
         $jsonFilePath = $folderPath . '/song.json';
+        $txtFilePath = $folderPath . '/othernames.txt';
+
+        // Získání hlavního názvu z JSON souboru
         $title = getSongTitle($jsonFilePath);
-        if ($title) {
+
+        // Získání alternativních názvů z textového souboru
+        $alternativeTitles = getAlternativeTitles($txtFilePath);
+
+        // Pokud máme alternativní názvy, použijeme je, jinak použijeme hlavní název
+        if (!empty($alternativeTitles)) {
+            foreach ($alternativeTitles as $altTitle) {
+                $songs[] = [
+                    'title' => $altTitle,
+                    'folder' => $folder
+                ];
+            }
+        } elseif ($title) {
             $songs[] = [
                 'title' => $title,
                 'folder' => $folder
@@ -32,7 +55,7 @@ foreach (scandir($baseDir) as $folder) {
 }
 
 // Seřazení písniček podle názvu
-usort($songs, function ($a, $b) {
+usort($songs, function($a, $b) {
     return strcmp($a['title'], $b['title']);
 });
 
