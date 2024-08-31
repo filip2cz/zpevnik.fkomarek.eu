@@ -3,6 +3,7 @@
     "autor": "Autor",
     "akordy": "odkaz",
     "zdroj": "odkaz",
+    "zdrojText": "text odkazu (může být smazáno)",
     "invidious": "odkaz",
     "youtube": "odkaz",
     "soundcloud": "odkaz",
