@@ -9,6 +9,7 @@ $song = json_decode($json, true);
 $nazev = isset($song['nazev']) ? $song['nazev'] : 'bez názvu';
 $autor = isset($song['autor']) ? $song['autor'] : 'neznámé';
 $akordy = isset($song['akordy']) ? $song['akordy'] : '';
+$akordyText = isset($song['akordyText']) ? $song['akordyText'] : $akordy;
 $zdroj = isset($song['zdroj']) ? $song['zdroj'] : '';
 $zdrojText = isset($song['zdrojText']) ? $song['zdrojText'] : $zdroj;
 $zdrojPopis = isset($song['zdrojPopis']) ? $song['zdrojPopis'] : '';
@@ -52,7 +53,9 @@ $escaped_text = htmlspecialchars($text);
 
         <?php if (!empty($akordy)): ?>
             <p class="center">Akordy: <a href="<?php echo htmlspecialchars($akordy); ?>"
-                    target="_blank"><?php echo htmlspecialchars($akordy); ?></a></p>
+                    target="_blank"><?php echo htmlspecialchars($akordyText); ?></a></p>
+        <?php elseif (!empty($akordyText)): ?>
+            <p class="center">Akordy: <?php echo htmlspecialchars($akordyText); ?></a></p>
         <?php endif; ?>
 
         <pre id="text"><?php echo $escaped_text; ?></pre>
