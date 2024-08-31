@@ -8,8 +8,8 @@ $song = json_decode($json, true);
 // Získání dat z JSON
 $nazev = isset($song['nazev']) ? $song['nazev'] : 'bez názvu';
 $autor = isset($song['autor']) ? $song['autor'] : 'neznámé';
-$akordy = isset($song['akordy']) ? $song['akordy'] : 'neznámé';
-$zdroj = isset($song['zdroj']) ? $song['zdroj'] : 'neznámé';
+$akordy = isset($song['akordy']) ? $song['akordy'] : '';
+$zdroj = isset($song['zdroj']) ? $song['zdroj'] : '';
 $invidious = isset($song['invidious']) ? $song['invidious'] : '';
 $youtube = isset($song['youtube']) ? $song['youtube'] : '';
 $soundcloud = isset($song['soundcloud']) ? $song['soundcloud'] : '';
@@ -44,8 +44,10 @@ $escaped_text = htmlspecialchars($text);
 
         <p class="center">Autor: <?php echo htmlspecialchars($autor); ?></p>
 
-        <p class="center">Akordy: <a href="<?php echo htmlspecialchars($akordy); ?>"
-                target="_blank"><?php echo htmlspecialchars($akordy); ?></a></p>
+        <?php if (!empty($akordy)): ?>
+            <p class="center">Akordy: <a href="<?php echo htmlspecialchars($akordy); ?>"
+                    target="_blank"><?php echo htmlspecialchars($akordy); ?></a></p>
+        <?php endif; ?>
 
         <pre id="text"><?php echo $escaped_text; ?></pre>
 
@@ -70,7 +72,8 @@ $escaped_text = htmlspecialchars($text);
             <?php endif; ?>
         </p>
 
-        <p class="center">Zdroj: <a href="<?php echo htmlspecialchars($zdroj); ?>" target="_blank"><?php echo htmlspecialchars($zdroj); ?></a></p>
+        <p class="center">Zdroj: <a href="<?php echo htmlspecialchars($zdroj); ?>"
+                target="_blank"><?php echo htmlspecialchars($zdroj); ?></a></p>
 
     </div>
 
