@@ -14,7 +14,7 @@
 
     <div class="container">
 
-        <a href="./"><button class="btn btn-primary" type="button">Zpět</button></a>
+        <a href="../"><button class="btn btn-primary" type="button">Zpět</button></a>
 
         <h1 class="nadpis">Jak přidat písničku</h1>
 

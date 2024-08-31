@@ -62,7 +62,7 @@
 
         <br>
 
-        <p class="center"><a href="jak-pridat.html">Jak přidat píseň</a></p>
+        <p class="center"><a href="jak-pridat/">Jak přidat píseň</a></p>
 
 </body>
 
