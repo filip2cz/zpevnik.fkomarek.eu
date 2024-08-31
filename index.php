@@ -60,12 +60,6 @@
 
         <p class="center"><a href="zlaty-hrebik-noci/">Zlatý hřebík noci</a></p>
 
-        <!--
-        <div class="d-grid gap-2 d-md-block center" style="padding-top: 5px;">
-            <a href="#" target="_blank"><button class="btn btn-primary" type="button">Jak přidat písničku</button></a>
-        </div>
-        -->
-
         <br>
 
         <p class="center"><a href="jak-pridat.html">Jak přidat píseň</a></p>
