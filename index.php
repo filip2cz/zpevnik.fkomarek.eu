@@ -42,7 +42,7 @@
 
         <p class="center"><a href="batalion/">Markytánka</a></p>
 
-        <p class="center"><a href="planeta-hieronyma-bosche-ii.html">Planeta Hieronyma Bosche II</a></p>
+        <p class="center"><a href="planeta-hieronyma-bosche-ii/">Planeta Hieronyma Bosche II</a></p>
 
         <p class="center"><a href="rada-se-miluje/">Ráda se miluje</a></p>
 
