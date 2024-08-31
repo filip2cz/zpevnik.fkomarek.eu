@@ -1,3 +1,43 @@
+<?php
+// Funkce pro čtení názvu písničky z JSON souboru
+function getSongTitle($jsonFilePath)
+{
+    if (!file_exists($jsonFilePath)) {
+        return null;
+    }
+    $jsonContent = file_get_contents($jsonFilePath);
+    $data = json_decode($jsonContent, true);
+    return $data['nazev'] ?? null;
+}
+
+// Cesta k hlavní složce s písničkami
+$baseDir = __DIR__; // Pokud je index.php ve stejném adresáři jako složky s písničkami
+
+// Array pro uchování názvů písniček a jejich cest
+$songs = [];
+
+// Prohledání všech složek v základním adresáři
+foreach (scandir($baseDir) as $folder) {
+    $folderPath = $baseDir . '/' . $folder;
+    if (is_dir($folderPath) && $folder !== '.' && $folder !== '..') {
+        $jsonFilePath = $folderPath . '/song.json';
+        $title = getSongTitle($jsonFilePath);
+        if ($title) {
+            $songs[] = [
+                'title' => $title,
+                'folder' => $folder
+            ];
+        }
+    }
+}
+
+// Seřazení písniček podle názvu
+usort($songs, function ($a, $b) {
+    return strcmp($a['title'], $b['title']);
+});
+
+?>
+
 <!DOCTYPE html>
 <html lang='cs' data-bs-theme="dark">
 
@@ -24,6 +64,19 @@
         </p>
 
         <!-- https://cs.wikipedia.org/wiki/Abeceda#%C4%8Cesk%C3%A1_abeceda -->
+
+
+        <!--
+
+        <ul>
+            <?php foreach ($songs as $song): ?>
+                <li class="songs-list"><a
+                        href="<?php echo htmlspecialchars($song['folder'] . '/index.php'); ?>"><?php echo htmlspecialchars($song['title']); ?></a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+
+        -->
 
         <!-- <p class="center"><a href="odkaz">nazev</a></p> -->
 
