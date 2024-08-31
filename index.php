@@ -27,7 +27,7 @@ $songs = [];
 // Prohledání všech složek v základním adresáři
 foreach (scandir($baseDir) as $folder) {
     $folderPath = $baseDir . '/' . $folder;
-    if (is_dir($folderPath) && $folder !== '.' && $folder !== '..') {
+    if (is_dir($folderPath) && $folder !== '.' && $folder !== '..' && $folder !== 'template') {
         $jsonFilePath = $folderPath . '/song.json';
         $txtFilePath = $folderPath . '/names.txt';
 
