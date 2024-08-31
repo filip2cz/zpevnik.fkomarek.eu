@@ -42,7 +42,7 @@ usort($songs, function ($a, $b) {
 <html lang='cs' data-bs-theme="dark">
 
 <head>
-    <title>zpěvník</title>
+    <title>Zpěvník</title>
     <link rel="icon" type="image/x-icon" href="./favicon.ico">
     <meta charset='utf-8'>
 </head>
