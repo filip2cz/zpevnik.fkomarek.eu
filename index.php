@@ -29,7 +29,7 @@ foreach (scandir($baseDir) as $folder) {
     $folderPath = $baseDir . '/' . $folder;
     if (is_dir($folderPath) && $folder !== '.' && $folder !== '..') {
         $jsonFilePath = $folderPath . '/song.json';
-        $txtFilePath = $folderPath . '/othernames.txt';
+        $txtFilePath = $folderPath . '/names.txt';
 
         // Získání hlavního názvu z JSON souboru
         $title = getSongTitle($jsonFilePath);
