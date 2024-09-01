@@ -89,7 +89,7 @@ usort($songs, function($a, $b) {
         <ul>
             <?php foreach ($songs as $song): ?>
                 <li class="songs-list"><a
-                        href="<?php echo htmlspecialchars($song['folder'] . '/index.php'); ?>"><?php echo htmlspecialchars($song['title']); ?></a>
+                        href="<?php echo htmlspecialchars($song['folder'] . '/'); ?>"><?php echo htmlspecialchars($song['title']); ?></a>
                 </li>
             <?php endforeach; ?>
         </ul>
