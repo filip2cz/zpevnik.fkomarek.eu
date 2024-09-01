@@ -55,10 +55,10 @@ $escaped_text = htmlspecialchars($text);
             <p class="center">Akordy: <a href="<?php echo htmlspecialchars($akordy); ?>"
                     target="_blank"><?php echo htmlspecialchars($akordyText); ?></a></p>
         <?php elseif (!empty($akordyText)): ?>
-            <p class="center">Akordy: <?php echo htmlspecialchars($akordyText); ?></a></p>
+            <p class="center" id="songText">Akordy: <?php echo htmlspecialchars($akordyText); ?></a></p>
         <?php endif; ?>
 
-        <pre id="text"><?php echo $escaped_text; ?></pre>
+        <div id="songText"><?php echo $escaped_text; ?></div>
 
         <p class="center">
             <?php if (!empty($invidious)): ?>
