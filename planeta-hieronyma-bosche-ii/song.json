@@ -6,5 +6,10 @@
     "invidious": "https://redirect.invidious.io/watch?v=_DjBaWWYbkE",
     "youtube": "https://youtu.be/_DjBaWWYbkE",
     "soundcloud": "",
-    "spotify": ""
+    "spotify": "https://open.spotify.com/track/07kj33WRlNTSalCtP5IQiJ",
+    "spotifyText": "Spotify - Oficiální se zpěvem",
+    "genericPlatform1": "https://open.spotify.com/track/1wTRU5ZWSQNNCHHJZgxkBR",
+    "genericPlatform1Text": "Spotify - Oficiální bez zpěvu",
+    "genericPlatform2": "https://open.spotify.com/track/65gHjSKVMDGAscouHf0X2s",
+    "genericPlatform2Text": "Spotify - Neoficiální se zpěvem - J. A. Kronek"
 }
