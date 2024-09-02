@@ -7,6 +7,7 @@ $song = json_decode($json, true);
 
 // Získání dat z JSON
 $nazev = isset($song['nazev']) ? $song['nazev'] : 'bez názvu';
+$nazevPopis = isset($song['nazevPopis']) ? $song['nazevPopis'] : '';
 $autor = isset($song['autor']) ? $song['autor'] : 'neznámé';
 $akordy = isset($song['akordy']) ? $song['akordy'] : '';
 $akordyText = isset($song['akordyText']) ? $song['akordyText'] : $akordy;
@@ -48,6 +49,10 @@ $escaped_text = htmlspecialchars($text);
         <a href="../"><button class="btn btn-primary" type="button">Zpět</button></a>
 
         <h1 class="center nadpis"><?php echo htmlspecialchars($nazev); ?></h1>
+
+        <?php if (!empty($nazevPopis)): ?>
+            <p class="center"><?php echo htmlspecialchars($nazevPopis); ?></a></p>
+        <?php endif; ?>
 
         <p class="center">Autor: <?php echo htmlspecialchars($autor); ?></p>
 
