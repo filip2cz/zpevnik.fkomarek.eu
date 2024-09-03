@@ -69,6 +69,8 @@ $escaped_text = htmlspecialchars($text);
 
         <div id="songText"><?php echo $escaped_text; ?></div>
 
+        <br>
+
         <p class="center">
             <?php if (!empty($invidious)): ?>
                 <a href="<?php echo htmlspecialchars($invidious); ?>"
