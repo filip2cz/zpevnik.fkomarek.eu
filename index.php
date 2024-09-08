@@ -82,7 +82,7 @@ usort($songs, function($a, $b) {
         <p class="center">Web je stále ve výstavbě, nicméně zde už je pár písniček:</p>
 
         <p class="center">
-            Novinky: <a href="dinosaur/">Dinosaur</a>, <a href="kometa/">Kometa</a>, <a href="valka-ruzi/">Válka růží</a>
+            Novinka: <a href="general-laudon/">Generál Laudon</a>
         </p>
 
         <ul>
