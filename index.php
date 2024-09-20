@@ -82,7 +82,7 @@ usort($songs, function($a, $b) {
         <p class="center">Web je stále ve výstavbě, nicméně zde už je pár písniček:</p>
 
         <p class="center">
-            Novinka: <a href="colorado/">Colorado</a>
+            Novinka: <a href="omnia-vincit-amor/">Omnia vincit amor</a>
         </p>
 
         <ul>
