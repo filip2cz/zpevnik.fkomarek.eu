@@ -95,7 +95,11 @@ $escaped_textAkordy = htmlspecialchars($textAkordy);
                         }
                     }
                 } else {
-                    echo "Cookie 'akordy' není nastaveno.";
+                    if ($text == "") {
+                        echo "<div id=\"songText\">$escaped_textAkordy</div>";
+                    } else {
+                        echo "<div id=\"songText\">$escaped_text</div>";
+                    }
                 }
                 ?>
             </div>
