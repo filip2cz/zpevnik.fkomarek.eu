@@ -27,11 +27,13 @@ $genericPlatform1Text = isset($song['genericPlatform1Text']) ? $song['genericPla
 $genericPlatform2 = isset($song['genericPlatform2']) ? $song['genericPlatform2'] : '';
 $genericPlatform2Text = isset($song['genericPlatform2Text']) ? $song['genericPlatform2Text'] : 'Další platforma 2';
 
-// Načtení obsahu souboru text.txt
+// Načtení obsahu souboru text.txt a text-akordy.txt
 $text = file_get_contents('text.txt');
+$textAkordy = file_get_contents('text-akordy.txt');
 
 // Bezpečné zobrazení obsahu (např. kódování speciálních HTML znaků)
 $escaped_text = htmlspecialchars($text);
+$escaped_textAkordy = htmlspecialchars($textAkordy);
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +52,15 @@ $escaped_text = htmlspecialchars($text);
 
     <div class="container">
 
-        <a href="../"><button class="btn btn-primary" type="button">Zpět</button></a>
+        <div class="d-flex justify-content-between gap-2">
+            <div class="p-2"><a href="../"><button class="btn btn-primary" type="button">Zpět</button></a></div>
+
+            <?php
+            if (!($textAkordy == "")) {
+                echo "<div id=\"toggleAkordy\" class=\"p-2\"></div>";
+            }
+            ?>
+        </div>
 
         <h1 class="center nadpis"><?php echo htmlspecialchars($nazev); ?></h1>
 
@@ -67,7 +77,31 @@ $escaped_text = htmlspecialchars($text);
             <p class="center">Akordy: <?php echo htmlspecialchars($akordyText); ?></a></p>
         <?php endif; ?>
 
-        <div id="songText"><?php echo $escaped_text; ?></div>
+        <div class="container"> <!-- zarovnání objektu na střed bez zarovnání textu na střed -->
+            <div class="d-flex justify-content-center align-items-center">
+                <?php
+                if (isset($_COOKIE['akordy'])) {
+                    if ($_COOKIE['akordy'] === 'true') {
+                        if ($textAkordy == "") {
+                            echo "<div id=\"songText\">$escaped_text</div>";
+                        } else {
+                            echo "<div id=\"songText\">$escaped_textAkordy</div>";
+                        }
+                    } else {
+                        if ($text == "") {
+                            echo "<div id=\"songText\">$escaped_textAkordy</div>";
+                        } else {
+                            echo "<div id=\"songText\">$escaped_text</div>";
+                        }
+                    }
+                } else {
+                    echo "Cookie 'akordy' není nastaveno.";
+                }
+                ?>
+            </div>
+        </div>
+
+
 
         <br>
 
@@ -117,6 +151,8 @@ $escaped_text = htmlspecialchars($text);
             <p class="center"><?php echo htmlspecialchars($zdrojPopis); ?></p>
         <?php endif; ?>
     </div>
+
+    <script src="/js/akordy-prepinac.js"></script>
 
 </body>
 

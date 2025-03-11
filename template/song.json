@@ -1,7 +1,6 @@
 {
     "nazev": "Název",
     "autor": "Autor",
-    "akordy": "odkaz (může být smazáno, pokud nejsou akordy)",
     "zdroj": "odkaz",
     "invidious": "odkaz",
     "youtube": "odkaz",

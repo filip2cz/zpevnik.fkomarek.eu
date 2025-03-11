@@ -1,6 +1,7 @@
 <?php
 // Funkce pro čtení názvu písničky z JSON souboru
-function getSongTitle($jsonFilePath) {
+function getSongTitle($jsonFilePath)
+{
     if (!file_exists($jsonFilePath)) {
         return null;
     }
@@ -10,7 +11,8 @@ function getSongTitle($jsonFilePath) {
 }
 
 // Funkce pro čtení alternativních názvů z textového souboru
-function getAlternativeTitles($txtFilePath) {
+function getAlternativeTitles($txtFilePath)
+{
     if (!file_exists($txtFilePath)) {
         return [];
     }
@@ -55,7 +57,7 @@ foreach (scandir($baseDir) as $folder) {
 }
 
 // Seřazení písniček podle názvu
-usort($songs, function($a, $b) {
+usort($songs, function ($a, $b) {
     return strcmp($a['title'], $b['title']);
 });
 
