@@ -1,9 +1,18 @@
+G C Em Am C
+D |-9----10----9------10----|
+G |---12----12---12------12-|
+
 [Sloka 1]
+G
 Podívej se brácho na tohohle
+C
 sejčka.
 Nepřemejšlim jako malej, jak
+     Em
 dělá liška.
+              Am
 Všichni se mě ptaj, co dělá
+C
 vejška.
 
 Nikoho už nezajímá oblíbená
@@ -13,8 +22,11 @@ jestli dávám dýška
 (možná ne).
 
 [Refrén 1]
+Am                 Em
 Dlouho se mě nikdo nezeptal,
+         Bm
 jakej je můj oblíbenej
+C
 dinosaur. (nezeptal)
 Dlouho se mě nikdo nezeptal,
 je to stegosaur, je to
@@ -34,6 +46,7 @@ zvonec
 a už to nejde zvládnout.
 
 [Refrén 2]
+Am Em Bm C
 Dlouho se mě nikdo nezeptal,
 jakej je můj oblíbenej
 dinosaur.
@@ -63,7 +76,9 @@ děti, nejsme děti, nejsme
 děti.
 
 2x [Refrén 2]
+Am Em Bm C (C G Gsus4 G5)
 
 [Outro]
+Am Em Bm C
 Je to stegosaur, je to
 stegosaur...
