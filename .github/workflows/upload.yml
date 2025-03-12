@@ -1,21 +1,20 @@
 name: Upload
 
 on:
-  workflow_dispatch:
+  push:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-
-- name: Checkout
-  uses: actions/checkout@v4
-- name: SFTP upload
-  uses: Dylan700/sftp-upload-action@latest
-  with:
-    server: nue.domcloud.co
-    username: zpevnik-fkomarek-eu
-    password: ${{secrets.password}}
-    port: 22
-    uploads: |
-      ./ => ./public_html/
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: SFTP upload
+      uses: Dylan700/sftp-upload-action@latest
+      with:
+        server: nue.domcloud.co
+        username: zpevnik-fkomarek-eu
+        password: ${{secrets.password}}
+        port: 22
+        uploads: |
+          ./ => ./public_html/
