@@ -84,7 +84,7 @@ usort($songs, function ($a, $b) {
         <p class="center">Web je stále ve výstavbě, nicméně zde už je pár písniček:</p>
 
         <p class="center">
-            Novinka: <a href="kdyz-me-zvali-na-panaka/">Když mě zvali na panáka</a>, <a href="mesita/">Mešita</a>
+            Novinka: <a href="kopu-dal/">Kopu Dál</a>
         </p>
 
         <ul>
